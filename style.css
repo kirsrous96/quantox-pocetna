@@ -332,7 +332,7 @@ nav .nav__close {
   background-size: cover;
 }
 
-.articles .why__text .expand {
+.articles .why__text #expand {
   display: none;
 }
 
