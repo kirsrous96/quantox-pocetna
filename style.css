@@ -184,13 +184,14 @@ header .emtpy .hero a img {
 }
 
 header .emtpy .hero h1 {
+  overflow: hidden;
   border-right: 0.15em solid #e5e5e5;
-  font-size: 3em;
+  font-size: 3vw;
   white-space: nowrap;
   letter-spacing: 0.15em;
   place-self: center;
-  -webkit-animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
-          animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
+  -webkit-animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+          animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 .nav__add {
@@ -251,6 +252,8 @@ nav .navigation .nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
   text-align: center;
 }
 
@@ -282,14 +285,15 @@ nav .navigation .navi__footer .social__links {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin-bottom: 0;
 }
 
 nav .nav__close {
   cursor: pointer;
   float: right;
   width: 40px;
-  margin-top: 50px;
-  padding-right: 15px;
+  padding-top: 20px;
+  padding-right: 40px;
 }
 
 .animHero {
@@ -858,9 +862,11 @@ footer .form form {
 }
 
 footer .form form input {
-  width: 40vw;
+  width: 60vw;
   height: 3vh;
   border: none;
+  background: transparent;
+  outline: none;
   border-bottom: 1px solid;
 }
 
@@ -1026,10 +1032,6 @@ footer .foot__copy {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
   }
-  .articles footer .form form button {
-    height: 30px;
-    width: 80px;
-  }
 }
 
 @media only screen and (max-width: 768px) and (max-width: 990px) {
@@ -1112,13 +1114,6 @@ footer .foot__copy {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-}
-
-@media (max-width: 768px) {
-  footer .form form button {
-    height: 50px;
-    width: 150px;
   }
 }
 

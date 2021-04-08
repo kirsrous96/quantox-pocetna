@@ -67,12 +67,13 @@ header {
         }
       }
       h1 {
+        overflow: hidden;
         border-right: 0.15em solid #e5e5e5;
-        font-size: 3em;
+        font-size: 3vw;
         white-space: nowrap;
         letter-spacing: 0.15em;
         place-self: center;
-        animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
+        animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
       }
     }
   }
@@ -115,6 +116,7 @@ nav {
     .nav {
       display: flex;
       flex-direction: column;
+      align-content: space-between;
       text-align: center;
       a {
         font-size: 1.2em;
@@ -137,6 +139,7 @@ nav {
       .social__links {
         display: flex;
         justify-content: space-around;
+        margin-bottom: 0;
       }
     }
   }
@@ -144,8 +147,8 @@ nav {
     cursor: pointer;
     float: right;
     width: 40px;
-    margin-top: 50px;
-    padding-right: 15px;
+    padding-top: 20px;
+    padding-right: 40px;
   }
 }
 
@@ -179,7 +182,7 @@ nav {
       color: set-text-color($light-color);
       line-height: 2em;
       &:hover {
-        color: #7eb126;
+        color: $primary-color;
       }
     }
   }
@@ -402,9 +405,11 @@ footer {
     form {
       padding: 5vh;
       input {
-        width: 40vw;
+        width: 60vw;
         height: 3vh;
         border: none;
+        background: transparent;
+        outline: none;
         border-bottom: 1px solid;
       }
       button {
@@ -501,16 +506,6 @@ footer {
         }
       }
     }
-    footer {
-      .form {
-        form {
-          button {
-            height: 30px;
-            width: 80px;
-          }
-        }
-      }
-    }
   }
 
   @media only screen and (max-width: 990px) {
@@ -557,16 +552,6 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-      }
-    }
-  }
-  footer {
-    .form {
-      form {
-        button {
-          height: 50px;
-          width: 150px;
-        }
       }
     }
   }

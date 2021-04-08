@@ -46,6 +46,17 @@ foter.addEventListener('mouseleave',() =>{
     naviLeft.classList.add('main__nav');
 })
 
+naviLeft.addEventListener('mouseenter', () =>{
+    naviLeft.classList.add('addColor');
+    for (i = 0; i < naviLeftnav.length; i++) {
+        naviLeftnav[i].style.color = "#fff";
+      }
+      for (i = 0; i < navFooter.length; i++) {
+        navFooter[i].style.color = '#fff';
+      }
+      
+})
+
 service.addEventListener('mouseenter', () =>{
     naviLeft.classList.add('addColor');
     for (i = 0; i < naviLeftnav.length; i++) {
@@ -69,6 +80,15 @@ working.addEventListener('mouseover',() =>{
     
 })
 
+naviLeft.addEventListener('mouseleave', () =>{
+    naviLeft.classList.remove('addColor');
+    for (i = 0; i < naviLeftnav.length; i++) {
+        naviLeftnav[i].style.color = "#000";
+      }
+      for (i = 0; i < navFooter.length; i++) {
+        navFooter[i].style.color = '#000';
+      }
+})
 service.addEventListener('mouseleave', () =>{
     naviLeft.classList.remove('addColor');
     for (i = 0; i < naviLeftnav.length; i++) {
