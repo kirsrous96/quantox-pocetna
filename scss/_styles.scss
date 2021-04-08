@@ -1,0 +1,25 @@
+@mixin before($text) {
+  &::before {
+    content: $text;
+    text-transform: uppercase;
+    opacity: 0.1;
+    color: #000000;
+    font-size: 300px;
+    font-weight: bold;
+    line-height: 218px;
+    margin-left: 0;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+%heading {
+  padding-top: 5vh;
+  padding-left: 10vw;
+}
+
+@mixin flex() {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}

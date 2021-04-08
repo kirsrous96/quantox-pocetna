@@ -7,6 +7,7 @@ const closeIt = document.getElementById('close');
 const foter = document.getElementById('foter');
 const service = document.getElementById('service');
 const naviLeftnav = document.getElementById('naviLeftnav').children;
+const mainNav = document.getElementsByClassName('.main__nav');
 const navFooter = document.getElementById('nav__footer').children;
 const working = document.querySelector('.working')
 const expand = document.getElementById('expand');
@@ -20,8 +21,7 @@ const article5=document.querySelector('.working__article5');
 let first = true;
 
 window.onload = ()=> {
-    window.scrollTo(0, 0),
-    hero.classList.add('animHero')
+    hero.classList.add('animHero');
 }
 
 
@@ -47,13 +47,14 @@ foter.addEventListener('mouseleave',() =>{
 })
 
 service.addEventListener('mouseenter', () =>{
+    naviLeft.classList.add('addColor');
     for (i = 0; i < naviLeftnav.length; i++) {
         naviLeftnav[i].style.color = "#fff";
       }
       for (i = 0; i < navFooter.length; i++) {
         navFooter[i].style.color = '#fff';
       }
-    
+      
 })
 
 working.addEventListener('mouseover',() =>{
@@ -69,6 +70,7 @@ working.addEventListener('mouseover',() =>{
 })
 
 service.addEventListener('mouseleave', () =>{
+    naviLeft.classList.remove('addColor');
     for (i = 0; i < naviLeftnav.length; i++) {
         naviLeftnav[i].style.color = "#000";
       }

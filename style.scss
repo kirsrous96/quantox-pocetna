@@ -1,42 +1,82 @@
+@import "scss/animations";
+@import "scss/config";
+@import "scss/styles";
+
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+$hero-height: 88vh;
+
 body {
+  font-family: Montserrat, sans-serif;
   margin: 0;
-  --s: 300px;
-  --m: 4px;
+  --s: 20vw;
+  --m: 2px;
   --r: calc(var(--s) * 3 * 1.1547 / 2+ 4 * var(--m));
 }
 
 header {
-  z-index: 999;
-  position: sticky;
-  width: 99vw;
-  background-color: #252525;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-
-  .header__right {
-    display: flex;
-    padding: 20px;
-    .languages {
-      padding: 15px;
-      a {
-        text-decoration: none;
-        color: #fff;
-        line-height: 2em;
+  background: url("https://quantox.com/assets/img/quantox-logo-bkg.png");
+  position: relative;
+  .header {
+    position: sticky;
+    z-index: 999;
+    width: 100vw;
+    color: #fff;
+    @include flex();
+    .header__right {
+      display: flex;
+      padding: 20px;
+      .languages {
+        padding: 15px;
+        a {
+          text-decoration: none;
+          color: #fff;
+          line-height: 2em;
+        }
+      }
+      img {
+        cursor: pointer;
+        background-color: #fff;
+        padding: 5px 10px;
+        width: 40px;
       }
     }
-    img {
-      cursor: pointer;
-      padding: 5px;
-      width: 40px;
+  }
+  .emtpy {
+    width: 100vw;
+    height: 85vh;
+    background-color: #fff;
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 102vh;
+      color: #fff;
+      display: grid;
+      background: url("https://quantox.com/assets/img/quantox-logo-bkg.png");
+      top: -15vh;
+      margin-bottom: 0;
+      a {
+        place-self: end center;
+        padding-bottom: 30px;
+        img {
+          width: 50px;
+        }
+      }
+      h1 {
+        border-right: 0.15em solid #e5e5e5;
+        font-size: 3em;
+        white-space: nowrap;
+        letter-spacing: 0.15em;
+        place-self: center;
+        animation: typing 4s steps(20, end), blink-caret 0.75s step-end infinite;
+      }
     }
   }
 }
-
 .nav__add {
   display: block;
 }
@@ -48,41 +88,44 @@ header {
   display: none;
 }
 
+.fab {
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
 nav {
   display: none;
   width: 100vw;
   height: 100vh;
-  background-color: #252525;
+  background-color: #000;
   .navigation {
+    @include flex();
+    padding-bottom: 0;
     width: 100vw;
     height: 90vh;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     .nav__logo {
       img {
         width: 40px;
       }
     }
-
     .nav {
       display: flex;
       flex-direction: column;
       text-align: center;
-
       a {
         font-size: 1.2em;
         text-decoration: none;
         color: #fff;
         line-height: 2em;
-
         &:hover {
           color: #7eb126;
         }
       }
     }
-
     .navi__footer {
       color: #fff;
       a {
@@ -91,8 +134,9 @@ nav {
         text-decoration: none;
         padding: 2px;
       }
-      img {
-        width: 40px;
+      .social__links {
+        display: flex;
+        justify-content: space-around;
       }
     }
   }
@@ -101,53 +145,26 @@ nav {
     float: right;
     width: 40px;
     margin-top: 50px;
+    padding-right: 15px;
   }
 }
+
 .animHero {
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-name: slidein;
-}
-
-.hero {
-  font-family: Montserrat, sans-serif;
-  z-index: 999;
-  position: sticky;
-  width: 99vw;
-  height: 88vh;
-  background-color: #252525;
-  color: #fff;
-  display: grid;
-
-  a {
-    place-self: end center;
-    img {
-      width: 50px;
-    }
-  }
-
-  h1 {
-    border-right: 0.15em solid #e5e5e5;
-    overflow: hidden;
-    font-size: 3em;
-    white-space: nowrap;
-    letter-spacing: 0.15em;
-    place-self: center;
-    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-  }
 }
 .main__navColor {
   color: #d5d5d5;
 }
-
 .main__nav {
   position: fixed;
   left: 0;
   top: 0;
   width: 14vw;
   height: 75vh;
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  color: set-text-color($light-color);
+  z-index: -1;
   img {
     width: 40px;
     padding: 20px;
@@ -156,24 +173,21 @@ nav {
     display: flex;
     flex-direction: column;
     padding: 20px;
-
     a {
       font-size: 1.2em;
       text-decoration: none;
-      color: #000;
+      color: set-text-color($light-color);
       line-height: 2em;
-
       &:hover {
         color: #7eb126;
       }
     }
   }
-
   .nav__footer {
     color: #000;
     padding: 20px;
     a {
-      color: #000;
+      color: set-text-color($light-color);
       font-size: 1.2em;
       text-decoration: none;
       padding: 2px;
@@ -184,11 +198,15 @@ nav {
     }
   }
 }
-.overline {
-  text-decoration: overline;
-  text-decoration-color: #97ca3a;
-}
 
+.addColor {
+  z-index: 999;
+  color: #fff;
+}
+.overline {
+  border-top: 1px solid $primary-color;
+  padding-top: 10px;
+}
 .animLeft {
   animation-duration: 4s;
   animation-name: slideleft;
@@ -197,101 +215,116 @@ nav {
   animation-duration: 4s;
   animation-name: slideright;
 }
-
 .articles {
   .why__back {
-    background: url("images/why.jpg");
+    @include before("WHY");
     height: 16vh;
     width: 40vw;
     background-position: center;
     background-size: cover;
     h1 {
-      padding-top: 10vh;
-      padding-left: 15vw;
+      @extend %heading;
     }
   }
-
   .why__text {
     padding-left: 15vw;
     height: 110vh;
     .text {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 1fr;
       gap: 15vh;
-
       .why__text1 {
-        background: url("images/1.svg");
-        background-position: center;
-        background-size: contain;
+        @include set-why("01");
       }
       .why__text2 {
-        background: url("images/2.svg");
-        background-position: center;
-        background-size: cover;
+        @include set-why("02");
       }
       .why__text3 {
-        background: url("images/3.svg");
-        background-position: center;
-        background-size: cover;
+        @include set-why("03");
       }
       .why__text4 {
-        background: url("images/4.svg");
-        background-position: center;
-        background-size: cover;
+        @include set-why("04");
       }
       .why__text5 {
-        background: url("images/5.svg");
-        background-position: center;
-        background-size: cover;
+        @include set-why("05");
       }
       .why__text6 {
-        background: url("images/6.svg");
-        background-position: center;
-        background-size: cover;
+        @include set-why("06");
       }
       .why__text7 {
-        background: url("images/7.svg");
-        background-position: center;
-        background-size: cover;
-      }
-      .why__text8 {
-        background: url("images/8.svg");
-        background-position: center;
-        background-size: cover;
+        @include set-why("07");
       }
     }
     #expand {
       display: none;
     }
   }
-
   .service {
+    h1 {
+      @extend %heading;
+    }
     color: #fff;
-    height: 120vh;
+    height: 150vh;
     padding-left: 15vw;
-    background-color: #222;
+    padding-bottom: 15vh;
+    background-color: #000;
     .hex-grid__list {
-      display: grid;
-      list-style-type: none;
+      display: flex;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(3, 1fr);
       gap: 10px;
-
+      a {
+        text-decoration: none;
+      }
+      .hex-1 {
+        @include set-service("https://quantox.com/assets/img/mobile.png");
+      }
+      .hex-2 {
+        @include set-service("https://quantox.com/assets/img/system-admin.png");
+      }
+      .hex-3 {
+        @include set-service("https://quantox.com/assets/img/be.png");
+      }
+      .hex-4 {
+        @include set-service("https://quantox.com/assets/img/consulting1.png");
+      }
+      .hex-5 {
+        margin-left: 10vw;
+        @include set-service("https://quantox.com/assets/img/fe.png");
+      }
+      .hex-6 {
+        @include set-service("https://quantox.com/assets/img/design.png");
+      }
+      .hex-7 {
+        @include set-service("https://quantox.com/assets/img/tech-support.png");
+      }
+      .hex-8 {
+        @include set-service(
+          "https://quantox.com/assets/img/virtual-assistant1.png"
+        );
+      }
+      .hex-9 {
+        @include set-service(
+          "https://quantox.com/assets/img/customer-support1.png"
+        );
+      }
+      .hex-10 {
+        @include set-service("https://quantox.com/assets/img/copywriting.png");
+      }
+      .hex-11 {
+        @include set-service("https://quantox.com/assets/img/video-edit.png");
+      }
       .hex-grid__item {
         display: grid;
         place-content: center;
         width: var(--s);
         height: calc(var(--s) * 1.1547);
-        margin: var(--m);
         background-color: #394d1c;
-        margin-bottom: calc(var(--m) - var(--s) * 0.1885);
+        margin-bottom: calc(var(--m) - var(--s) * 0.2885);
         &:hover {
-          background-color: #97ca3a;
+          background-color: rgba(117, 165, 44, 0.4);
         }
-
         clip-path: polygon(
           0% 25%,
           0% 75%,
@@ -313,12 +346,14 @@ nav {
       }
     }
   }
-
   .working {
-    height: 120vh;
-
+    height: 150vh;
+    padding-bottom: 10vh;
+    h1 {
+      @extend %heading;
+    }
     .working__back {
-      background: url("images/work.jpg");
+      @include before("WORKING");
       height: 15vh;
       width: 80vw;
       background-position: center;
@@ -337,97 +372,32 @@ nav {
       text-align: left;
       gap: 20vh;
       .working__article1 {
-        position: relative;
-      }
-      .working__article1::before {
-        content: "";
-        background-image: url("https://cdn.pixabay.com/photo/2021/02/22/08/41/crocus-6039312__340.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.7;
+        @include set-working("images/pic-1.png");
       }
       .working__article2 {
-        position: relative;
-      }
-      .working__article2::before {
-        content: "";
-        background-image: url("https://cdn.pixabay.com/photo/2019/11/10/19/53/camera-4616573__340.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.7;
+        @include set-working("images/pic-2.png");
       }
       .working__article3 {
-        position: relative;
-      }
-      .working__article3::before {
-        content: "";
-        background-image: url("https://cdn.pixabay.com/photo/2020/02/09/18/55/bastei-4834233__340.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.7;
+        @include set-working("images/pic-3.png");
       }
       .working__article4 {
-        position: relative;
-      }
-      .working__article4::before {
-        content: "";
-        background-image: url("https://cdn.pixabay.com/photo/2021/03/18/19/56/keyboard-6105750__340.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.7;
+        @include set-working("images/pic-4.png");
       }
       .working__article5 {
-        overflow: hidden;
-        position: relative;
-      }
-      .working__article5::before {
-        content: "";
-        background-image: url("https://cdn.pixabay.com/photo/2020/11/02/05/56/music-5705801__340.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        opacity: 0.7;
+        @include set-working("images/pic-5.png");
       }
     }
   }
 }
 
 footer {
+  @include before("MAILING");
   width: 100vw;
-
-  text-align: center;
-
+  background: #e5e5e5;
+  .form__container {
+    text-align: center;
+  }
   .form {
-    background: #e5e5e5;
     padding: 7vh;
     form {
       padding: 5vh;
@@ -446,8 +416,11 @@ footer {
       }
     }
   }
-  .linkovi {
+  .links {
     background-image: linear-gradient(to right, #fff, #dbdbdb);
+    .links__container {
+      text-align: center;
+    }
     .nav {
       a {
         text-decoration: none;
@@ -456,71 +429,25 @@ footer {
       }
     }
   }
-
   .social__links {
+    text-align: center;
     img {
       width: 35px;
       padding: 5px;
     }
   }
-  span {
-    color: #97ca3a;
-  }
-}
-//animations
-@keyframes slidein {
-  from {
-    top: 10vh;
-    height: 0;
-  }
-
-  to {
-    height: 100vh;
-  }
-}
-@keyframes slideleft {
-  from {
-    left: -30vw;
-  }
-
-  to {
-    left: 0vw;
-  }
-}
-@keyframes slideright {
-  from {
-    right: -30vw;
-  }
-
-  to {
-    right: 0vw;
+  .foot__copy {
+    background: #fff;
+    text-align: center;
   }
 }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 60%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #e5e5e5;
-  }
-}
-
-//media query
-@media only screen and (max-width: 700px) {
-  .hero {
-    h1 {
-      font-size: 1.5em;
+@media (max-width: 768px) {
+  header {
+    .hero {
+      h1 {
+        font-size: 1em;
+      }
     }
   }
   header {
@@ -538,8 +465,9 @@ footer {
     .why__text {
       height: auto;
       .text {
-        grid-template-columns: repeat(auto-fill, 200px);
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
       .expand {
         display: block;
@@ -553,57 +481,82 @@ footer {
       }
     }
     .service {
-      height: auto;
       .hex-grid__list {
-        grid-template-columns: repeat(auto-fill, 200px);
+        grid-template-columns: repeat(auto-fill, 1fr);
+        @for $i from 1 through 11 {
+          .hex-grid__item:nth-child(3n -1) {
+            margin-left: 20vw;
+          }
+
+          .hex-grid__item {
+            width: 40vw;
+            height: 40vw;
+          }
+        }
+      }
+      .working {
+        height: auto;
+        .working__articles {
+          grid-template-columns: repeat(1, 1fr);
+        }
       }
     }
-    .working {
-      height: auto;
-      .working__articles {
-        grid-template-columns: repeat(auto-fill, 200px);
-      }
-    }
-  }
-  footer {
-    .form {
-      form {
-        button {
-          height: 30px;
-          width: 80px;
+    footer {
+      .form {
+        form {
+          button {
+            height: 30px;
+            width: 80px;
+          }
         }
       }
     }
   }
-}
 
-@media only screen and (max-width: 990px) {
-  .hero {
-    h1 {
-      font-size: 2em;
-    }
-  }
-  .main__nav {
-    display: none;
-  }
-  .articles {
-    height: auto;
-    .why__text {
-      height: auto;
-      .text {
-        grid-template-columns: repeat(auto-fill, 230px);
+  @media only screen and (max-width: 990px) {
+    header {
+      .hero {
+        h1 {
+          font-size: 2em;
+        }
       }
     }
-    .service {
+    .main__nav {
+      display: none;
+    }
+    .articles {
       height: auto;
-      .hex-grid__list {
-        grid-template-columns: repeat(auto-fill, 220px);
+      place-content: center;
+      .why__text {
+        height: auto;
+        .text {
+          grid-template-columns: repeat(2, 2fr);
+        }
+      }
+      .service {
+        height: auto;
+        place-content: center;
+        .hex-grid__list {
+          grid-template-columns: repeat(auto-fill, 1fr);
+          @for $i from 1 through 11 {
+            .hex-grid__item:nth-child(5n -1) {
+              margin-left: 40vw;
+            }
+          }
+        }
+        .hex-grid__item {
+          width: 30vw;
+          height: 30vw;
+        }
       }
     }
     .working {
       height: auto;
       .working__articles {
-        grid-template-columns: repeat(auto-fill, 250px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     }
   }
@@ -620,9 +573,11 @@ footer {
 }
 
 @media only screen and (max-width: 1300px) {
-  .hero {
-    h1 {
-      font-size: 2.5em;
+  header {
+    .hero {
+      h1 {
+        font-size: 2.5em;
+      }
     }
   }
   .articles {
@@ -630,14 +585,11 @@ footer {
     .why__text {
       height: auto;
       .text {
-        grid-template-columns: repeat(auto-fill, 300px);
+        grid-template-columns: repeat(2, 1fr);
       }
     }
     .service {
       height: auto;
-      .hex-grid__list {
-        grid-template-columns: repeat(auto-fill, 280px);
-      }
     }
     .working {
       height: auto;
@@ -647,8 +599,3 @@ footer {
     }
   }
 }
-
-//1200
-//1400
-//768 working
-//990

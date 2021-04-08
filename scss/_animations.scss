@@ -1,0 +1,48 @@
+//animations
+@keyframes slidein {
+  from {
+    top: 0;
+    height: 0;
+  }
+
+  to {
+    height: 105vh;
+  }
+}
+@keyframes slideleft {
+  from {
+    left: -30vw;
+  }
+
+  to {
+    left: 0vw;
+  }
+}
+@keyframes slideright {
+  from {
+    right: -30vw;
+  }
+
+  to {
+    right: 0vw;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #e5e5e5;
+  }
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>Quantox pocetna</title>
 </head>
 <body>
@@ -34,40 +35,43 @@
                 <a href="#">хеб</a>
                 <hr />
                 <div class="social__links">
-                    <img src="images/facebook.svg" alt="facebook">
-                    <img src="images/twitter.svg" alt="twitter">
-                    <img src="images/linkedin.svg" alt="linkedin">
-                    <img src="images/instagram.svg" alt="instagram">
-                    <img src="images/youtube.svg" alt="youtube">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
                 </div>
             </div>
         </div>
     </nav>
     <div id="site">
     <header>
-        <div class="logo">
-            <img src="https://quantox.com/assets/img/logo.png" alt="Logo">
+        <div class="header">
+            <div class="logo">
+                <img src="https://quantox.com/assets/img/logo.png" alt="Logo">
+            </div>
+            <div class="header__right">
+                <div class="languages">
+                    <a href="#">eng  |</a>
+                    <a href="#">срб  |</a>
+                    <a href="#">ya  |</a>
+                    <a href="#">де  |</a>
+                    <a href="#">мк  |</a>
+                    <a href="#">хеб</a>
+                </div>
+                <div id="hamburger" class="ham_menu">
+                    <img src="images/square.svg" alt="">
+                </div>
+            </div>
         </div>
-        <div class="header__right">
-            <div class="languages">
-                <a href="#">eng  |</a>
-                <a href="#">срб  |</a>
-                <a href="#">ya  |</a>
-                <a href="#">де  |</a>
-                <a href="#">мк  |</a>
-                <a href="#">хеб</a>
-            </div>
-            <div id="hamburger" class="ham_menu">
-                <img src="images/square.svg" alt="">
-            </div>
+        
+        <div class="emtpy">
+            <section class="hero">
+                <h1>Web Development & IT Consulting</h1>
+                <a href="#articles"><img src="images/mouse.svg" alt="mouse"></a>  
+            </section>
         </div>
     </header>
-    <section class="hero">
-        <h1>Web Development & IT Consulting</h1>
-
-        <a href="#articles"><img src="images/mouse.svg" alt="mouse"></a>
-    </section>
-    
     <main>
         <div id="naviLeft" class="main__nav">
             <img src="https://quantox.com/assets/img/logo-menu.png" alt="Logo">
@@ -91,11 +95,11 @@
                     
                 <hr />
                 <div class="social__links">
-                    <img src="images/facebook.svg" alt="facebook">
-                    <img src="images/twitter.svg" alt="twitter">
-                    <img src="images/linkedin.svg" alt="linkedin">
-                    <img src="images/instagram.svg" alt="instagram">
-                    <img src="images/youtube.svg" alt="youtube">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
                 </div>
             </div>
         </div>
@@ -104,72 +108,74 @@
         <article class="why">
                 <div class="why__back"><h1><span class="overline">ЗАШ</span>ТО ИЗАБРАТИ QUANTOX?</h1></div>
                 <div class="why__text">
-                    <div class="text">
-                            <p class="why__text1">Quantox је поуздан! Радићете са компанијом која запошљава више од 200 квалификованих стручњака из разних области, а комбинација њихових талената омогућава нам да самоуверено креирамо апсолутно сваку врсту дигиталног производа, од desktop и мобилних апликација до уређаја за виртуелну реалност. Наш највећи приоритет је да осигурамо да посао који сте нам доделили буде урађен добро и на време</p>
-                            <p class="why__text2">Запошљавамо најбоље што IT индустрија има да понуди, како би наши клијенти увек добили стабилна, креативна и одржива решења</p>
-                            <p class="why__text3">Имамо више од 10 година искуства и поносимо се квалитетом наших услуга.</p>
-                            <p class="why__text4">Наш тим се служи енглеским језиком на високом нивоу што је од виталног значаја за добру комуникацију са клијентима - штеди ваше време и спречава евентуалне несугласице и нејасноће приликом превода и рада на пројекту.</p>
-                            <p class="why__text5 less">Наше особље је исплативо решење за вас - на располагању вам је лојалан и посвећен тим искусних програмера.</p>
-                            <p class="why__text6 less">Поред рада на постојећим пројектима, наш тим је посвећен константном тренингу и унапређењу знања и искуства, пратећи најновије технологије и методе рада у циљу израде најквалитетнијег производа</p>
-                            <p class="why__text7 less">Quantox Technology је основан на принципима вредновања рада, бриге о запосленима и клијентима, одговорном понашању свих у компанији, а све у циљу подизања граница сарадње на свим нивоима. Сви запослени у Quantoxu су добро плаћени и третирани су са поштовањем. Водимо се изузетном радном етиком, градимо јединство тима кроз разна дружења унутар и ван канцеларије</p>
-                    </div>
+                    <ul class="text">
+                            <li class="why__text1"><p>Quantox је поуздан! Радићете са компанијом која запошљава више од 200 квалификованих стручњака из разних области, а комбинација њихових талената омогућава нам да самоуверено креирамо апсолутно сваку врсту дигиталног производа, од desktop и мобилних апликација до уређаја за виртуелну реалност. Наш највећи приоритет је да осигурамо да посао који сте нам доделили буде урађен добро и на време</p></li>
+                            <li class="why__text2"><p>Запошљавамо најбоље што IT индустрија има да понуди, како би наши клијенти увек добили стабилна, креативна и одржива решења</p></li>
+                            <li class="why__text3"><p>Имамо више од 10 година искуства и поносимо се квалитетом наших услуга.</p></li>
+                            <li class="why__text4"><p>Наш тим се служи енглеским језиком на високом нивоу што је од виталног значаја за добру комуникацију са клијентима - штеди ваше време и спречава евентуалне несугласице и нејасноће приликом превода и рада на пројекту.</p></li>
+                            <li class="why__text5 less"><p>Наше особље је исплативо решење за вас - на располагању вам је лојалан и посвећен тим искусних програмера.</p></li>
+                            <li class="why__text6 less"><p>Поред рада на постојећим пројектима, наш тим је посвећен константном тренингу и унапређењу знања и искуства, пратећи најновије технологије и методе рада у циљу израде најквалитетнијег производа</p></li>
+                            <li class="why__text7 less"><p>Quantox Technology је основан на принципима вредновања рада, бриге о запосленима и клијентима, одговорном понашању свих у компанији, а све у циљу подизања граница сарадње на свим нивоима. Сви запослени у Quantoxu су добро плаћени и третирани су са поштовањем. Водимо се изузетном радном етиком, градимо јединство тима кроз разна дружења унутар и ван канцеларије</p></li>
+                    </ul>
                     <button id="expand">ВИДИ СВЕ</button>
                 </div>
         </article>
         <article id="service" class="service">
             <h1><span class="overline">НАШ</span>Е УСЛУГЕ</h1>
             <ul class="hex-grid__list">
-                <li class="hex-grid__item">
+                <a href="#">
+                <li class="hex-grid__item hex-1">
                     <div class="hex-grid__content">
                         РАЗВОЈ МОБИЛНОХ АПЛИКАЦИЈА
                     </div>
                 </li>
-                <li class="hex-grid__item">
+            </a>
+                <li class="hex-grid__item hex-2">
                     <div class="hex-grid__content">
                         АДМИНИСТРАТОР
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-3">
                     <div class="hex-grid__content">
                         BACK END ПРОГРАМИРАЊЕ
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-4">
                     <div class="hex-grid__content">
                         КОНСАЛТИНГ
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-5">
                     <div class="hex-grid__content">
                         FRONT END ПРОГРАМИРАЊЕ
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-6">
                     <div class="hex-grid__content">
                         ВЕБ ДИЗАЈН
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-7">
                     <div class="hex-grid__content">
                         ПОДРШКА
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-8">
                     <div class="hex-grid__content">
                         ВИРТУЕЛНИ АСИСТЕНТИ
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-9">
                     <div class="hex-grid__content">
                         КОРИСНИШКА ПОДРШКА
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-10">
                     <div class="hex-grid__content">
                         АУТОРСКА ПРАВА
                     </div>
                 </li>
-                <li class="hex-grid__item">
+                <li class="hex-grid__item hex-11">
                     <div class="hex-grid__content">
                         ВИДЕО МОНТАЖА
                     </div>
@@ -218,15 +224,17 @@
     </main>
 </div>
     <footer id="foter">
+        <div class="form__container">        
         <div class="form">
-            <h1><span class="overline">ПРИ</span>ЈАВИТЕ СЕ НА НАШУ Е-МАИЛ ЛИСТУ</h1>
+            <h1><span class="overline att">ПРИ</span>ЈАВИТЕ СЕ НА НАШУ Е-МАИЛ ЛИСТУ</h1>
         <form >
             <input type="email" name="email" id="email" placeholder="Ваш Е-маил">
             <button>ПРИЈАВИ СЕ</button>
         </form>
         </div>
-        <div class="linkovi">
-        <img src="https://quantox.com/assets/img/logo-services.png" alt="Logo">
+        <div class="links">
+            <div class="links__container">
+                <img src="https://quantox.com/assets/img/logo-services.png" alt="Logo">
         <div class="nav">
             <a href="#">Услуге</a>
             <a href="#">Портфолио</a>
@@ -238,15 +246,19 @@
             <a href="#">Ангажујте Нас</a>
         </div>
         <div class="social__links">
-            <img src="images/facebook.svg" alt="facebook">
-            <img src="images/twitter.svg" alt="twitter">
-            <img src="images/linkedin.svg" alt="linkedin">
-            <img src="images/instagram.svg" alt="instagram">
-            <img src="images/youtube.svg" alt="youtube">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
         </div>
+            </div>
         </div>
-        <p>Сва ауторска права задржава Quantox Technology д.о.о. у чијем је власништву web сајт <span>www.quantox.com</span></p>
-        <p><span>Мапа Сајта</span></p>
+        <div class="foot__copy">
+            <p>Сва ауторска права задржава Quantox Technology д.о.о. у чијем је власништву web сајт <span>www.quantox.com</span></p>
+            <p><span>Мапа Сајта</span></p>
+        </div>
+    </div>
     </footer>
     
 
