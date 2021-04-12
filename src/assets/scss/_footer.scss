@@ -1,0 +1,53 @@
+footer {
+  @include before("MAILING");
+  width: 100vw;
+  background: #e5e5e5;
+  .form__container {
+    text-align: center;
+  }
+  .form {
+    padding: 7vh;
+    form {
+      padding: 5vh;
+      input {
+        width: 60vw;
+        height: 3vh;
+        border: none;
+        background: transparent;
+        outline: none;
+        border-bottom: 1px solid;
+      }
+      button {
+        border-radius: 5em;
+        height: 4vh;
+        width: 100px;
+        background: #2e2e2e;
+        color: #fff;
+      }
+    }
+  }
+  .links {
+    background-image: linear-gradient(to right, #fff, #dbdbdb);
+    .links__container {
+      text-align: center;
+    }
+    .nav {
+      a {
+        text-decoration: none;
+        color: #111111;
+        padding: 10px;
+      }
+    }
+  }
+  .social__links {
+    text-align: center;
+    img {
+      width: 35px;
+      padding: 5px;
+    }
+  }
+  .foot__copy {
+    background: #fff;
+    text-align: center;
+  }
+}

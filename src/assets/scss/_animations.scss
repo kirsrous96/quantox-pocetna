@@ -1,4 +1,13 @@
 //animations
+.animLeft {
+  animation-duration: 4s;
+  animation-name: slideleft;
+}
+.animRight {
+  animation-duration: 4s;
+  animation-name: slideright;
+}
+
 @keyframes slidein {
   from {
     top: 0;

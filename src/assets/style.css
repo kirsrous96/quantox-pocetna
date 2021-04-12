@@ -1,3 +1,17 @@
+.animLeft {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: slideleft;
+          animation-name: slideleft;
+}
+
+.animRight {
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-name: slideright;
+          animation-name: slideright;
+}
+
 @-webkit-keyframes slidein {
   from {
     top: 0;
@@ -97,21 +111,6 @@
   padding-left: 10vw;
 }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-body {
-  font-family: Montserrat, sans-serif;
-  margin: 0;
-  --s: 20vw;
-  --m: 2px;
-  --r: calc(var(--s) * 3 * 1.1547 / 2+ 4 * var(--m));
-}
-
 header {
   background: url("https://quantox.com/assets/img/quantox-logo-bkg.png");
   position: relative;
@@ -129,7 +128,6 @@ header .header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px;
 }
 
 header .header .header__right {
@@ -158,14 +156,14 @@ header .header .header__right img {
 
 header .emtpy {
   width: 100vw;
-  height: 85vh;
+  height: 88vh;
   background-color: #fff;
 }
 
 header .emtpy .hero {
   position: relative;
   width: 100%;
-  height: 102vh;
+  height: 105vh;
   color: #fff;
   display: -ms-grid;
   display: grid;
@@ -194,25 +192,6 @@ header .emtpy .hero h1 {
           animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
-.nav__add {
-  display: block;
-}
-
-.remove {
-  display: none;
-}
-
-.nav__remove {
-  display: none;
-}
-
-.fab {
-  font-size: 34px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
-}
-
 nav {
   display: none;
   width: 100vw;
@@ -227,7 +206,6 @@ nav .navigation {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px;
   padding-bottom: 0;
   width: 100vw;
   height: 90vh;
@@ -292,8 +270,9 @@ nav .nav__close {
   cursor: pointer;
   float: right;
   width: 40px;
-  padding-top: 20px;
-  padding-right: 40px;
+  margin-top: 30px;
+  margin-right: 40px;
+  background-color: #fff;
 }
 
 .animHero {
@@ -345,7 +324,7 @@ nav .nav__close {
 }
 
 .main__nav .nav a:hover {
-  color: #7eb126;
+  color: #7eb126 !important;
 }
 
 .main__nav .nav__footer {
@@ -360,33 +339,13 @@ nav .nav__close {
   padding: 2px;
 }
 
+.main__nav .nav__footer a:hover {
+  color: #7eb126 !important;
+}
+
 .main__nav .nav__footer img {
   width: 40px;
   padding: 0;
-}
-
-.addColor {
-  z-index: 999;
-  color: #fff;
-}
-
-.overline {
-  border-top: 1px solid #7eb126;
-  padding-top: 10px;
-}
-
-.animLeft {
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-name: slideleft;
-          animation-name: slideleft;
-}
-
-.animRight {
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-animation-name: slideright;
-          animation-name: slideright;
 }
 
 .articles .why__back {
@@ -563,6 +522,7 @@ nav .nav__close {
 .articles .service {
   color: #fff;
   height: 150vh;
+  width: 100vw;
   padding-left: 15vw;
   padding-bottom: 15vh;
   background-color: #000;
@@ -636,7 +596,7 @@ nav .nav__close {
 }
 
 .articles .service .hex-grid__list .hex-5 {
-  margin-left: 10vw;
+  margin-left: 9vw;
   background-image: url("https://quantox.com/assets/img/fe.png");
   background-position: center;
   background-size: contain;
@@ -830,84 +790,7 @@ nav .nav__close {
   background-position: center;
 }
 
-footer {
-  width: 100vw;
-  background: #e5e5e5;
-}
-
-footer::before {
-  content: "MAILING";
-  text-transform: uppercase;
-  opacity: 0.1;
-  color: #000000;
-  font-size: 300px;
-  font-weight: bold;
-  line-height: 218px;
-  margin-left: 0;
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
-}
-
-footer .form__container {
-  text-align: center;
-}
-
-footer .form {
-  padding: 7vh;
-}
-
-footer .form form {
-  padding: 5vh;
-}
-
-footer .form form input {
-  width: 60vw;
-  height: 3vh;
-  border: none;
-  background: transparent;
-  outline: none;
-  border-bottom: 1px solid;
-}
-
-footer .form form button {
-  border-radius: 5em;
-  height: 4vh;
-  width: 10vw;
-  background: #2e2e2e;
-  color: #fff;
-}
-
-footer .links {
-  background-image: -webkit-gradient(linear, left top, right top, from(#fff), to(#dbdbdb));
-  background-image: linear-gradient(to right, #fff, #dbdbdb);
-}
-
-footer .links .links__container {
-  text-align: center;
-}
-
-footer .links .nav a {
-  text-decoration: none;
-  color: #111111;
-  padding: 10px;
-}
-
-footer .social__links {
-  text-align: center;
-}
-
-footer .social__links img {
-  width: 35px;
-  padding: 5px;
-}
-
-footer .foot__copy {
-  background: #fff;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   header .hero h1 {
     font-size: 1em;
   }
@@ -1034,7 +917,7 @@ footer .foot__copy {
   }
 }
 
-@media only screen and (max-width: 768px) and (max-width: 990px) {
+@media screen and (max-width: 768px) and (max-width: 990px) {
   header .hero h1 {
     font-size: 2em;
   }
@@ -1117,7 +1000,7 @@ footer .foot__copy {
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   header .hero h1 {
     font-size: 2.5em;
   }
@@ -1141,5 +1024,124 @@ footer .foot__copy {
     -ms-grid-columns: (350px)[auto-fill];
         grid-template-columns: repeat(auto-fill, 350px);
   }
+}
+
+footer {
+  width: 100vw;
+  background: #e5e5e5;
+}
+
+footer::before {
+  content: "MAILING";
+  text-transform: uppercase;
+  opacity: 0.1;
+  color: #000000;
+  font-size: 300px;
+  font-weight: bold;
+  line-height: 218px;
+  margin-left: 0;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+footer .form__container {
+  text-align: center;
+}
+
+footer .form {
+  padding: 7vh;
+}
+
+footer .form form {
+  padding: 5vh;
+}
+
+footer .form form input {
+  width: 60vw;
+  height: 3vh;
+  border: none;
+  background: transparent;
+  outline: none;
+  border-bottom: 1px solid;
+}
+
+footer .form form button {
+  border-radius: 5em;
+  height: 4vh;
+  width: 100px;
+  background: #2e2e2e;
+  color: #fff;
+}
+
+footer .links {
+  background-image: -webkit-gradient(linear, left top, right top, from(#fff), to(#dbdbdb));
+  background-image: linear-gradient(to right, #fff, #dbdbdb);
+}
+
+footer .links .links__container {
+  text-align: center;
+}
+
+footer .links .nav a {
+  text-decoration: none;
+  color: #111111;
+  padding: 10px;
+}
+
+footer .social__links {
+  text-align: center;
+}
+
+footer .social__links img {
+  width: 35px;
+  padding: 5px;
+}
+
+footer .foot__copy {
+  background: #fff;
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  --s: 18vw;
+  --m: 2px;
+  --r: calc(var(--s) * 3 * 1.1547 / 2+ 4 * var(--m));
+}
+
+.nav__add {
+  display: block;
+}
+
+.remove {
+  display: none;
+}
+
+.nav__remove {
+  display: none;
+}
+
+.fab {
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.addColor {
+  z-index: 999;
+  color: #fff;
+}
+
+.overline {
+  border-top: 1px solid #7eb126;
+  padding-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */

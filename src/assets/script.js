@@ -1,3 +1,4 @@
+function scriptFile(){
 const hamburger = document.getElementById('hamburger');
 const navi = document.getElementById('navi');
 const hero = document.querySelector('.hero');
@@ -7,7 +8,6 @@ const closeIt = document.getElementById('close');
 const foter = document.getElementById('foter');
 const service = document.getElementById('service');
 const naviLeftnav = document.getElementById('naviLeftnav').children;
-const mainNav = document.getElementsByClassName('.main__nav');
 const navFooter = document.getElementById('nav__footer').children;
 const working = document.querySelector('.working')
 const expand = document.getElementById('expand');
@@ -48,10 +48,10 @@ foter.addEventListener('mouseleave',() =>{
 
 naviLeft.addEventListener('mouseenter', () =>{
     naviLeft.classList.add('addColor');
-    for (i = 0; i < naviLeftnav.length; i++) {
+    for (let i = 0; i < naviLeftnav.length; i++) {
         naviLeftnav[i].style.color = "#fff";
       }
-      for (i = 0; i < navFooter.length; i++) {
+      for (let i = 0; i < navFooter.length; i++) {
         navFooter[i].style.color = '#fff';
       }
       
@@ -59,10 +59,10 @@ naviLeft.addEventListener('mouseenter', () =>{
 
 service.addEventListener('mouseenter', () =>{
     naviLeft.classList.add('addColor');
-    for (i = 0; i < naviLeftnav.length; i++) {
+    for (let i = 0; i < naviLeftnav.length; i++) {
         naviLeftnav[i].style.color = "#fff";
       }
-      for (i = 0; i < navFooter.length; i++) {
+      for (let i = 0; i < navFooter.length; i++) {
         navFooter[i].style.color = '#fff';
       }
       
@@ -82,19 +82,19 @@ working.addEventListener('mouseover',() =>{
 
 naviLeft.addEventListener('mouseleave', () =>{
     naviLeft.classList.remove('addColor');
-    for (i = 0; i < naviLeftnav.length; i++) {
+    for (let i = 0; i < naviLeftnav.length; i++) {
         naviLeftnav[i].style.color = "#000";
       }
-      for (i = 0; i < navFooter.length; i++) {
+      for (let i = 0; i < navFooter.length; i++) {
         navFooter[i].style.color = '#000';
       }
 })
 service.addEventListener('mouseleave', () =>{
     naviLeft.classList.remove('addColor');
-    for (i = 0; i < naviLeftnav.length; i++) {
+    for (let i = 0; i < naviLeftnav.length; i++) {
         naviLeftnav[i].style.color = "#000";
       }
-      for (i = 0; i < navFooter.length; i++) {
+      for (let i = 0; i < navFooter.length; i++) {
         navFooter[i].style.color = '#000';
       }
 })
@@ -105,3 +105,7 @@ expand.addEventListener('click',() =>{
     less[i].classList.add('more');
     }
 });
+
+};
+
+export default scriptFile;

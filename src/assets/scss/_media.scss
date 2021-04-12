@@ -1,0 +1,137 @@
+@include media-md {
+  header {
+    .hero {
+      h1 {
+        font-size: 1em;
+      }
+    }
+  }
+  header {
+    .header__right {
+      .languages {
+        display: none;
+      }
+      img {
+        padding: 0;
+      }
+    }
+  }
+  .articles {
+    width: 100vw;
+    .why__text {
+      height: auto;
+      .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .expand {
+        display: block;
+      }
+
+      .less {
+        display: none;
+      }
+      .more {
+        display: block;
+      }
+    }
+    .service {
+      .hex-grid__list {
+        grid-template-columns: repeat(auto-fill, 1fr);
+        @for $i from 1 through 11 {
+          .hex-grid__item:nth-child(3n -1) {
+            margin-left: 20vw;
+          }
+
+          .hex-grid__item {
+            width: 40vw;
+            height: 40vw;
+          }
+        }
+      }
+      .working {
+        height: auto;
+        .working__articles {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+  }
+
+  @include media-lg {
+    header {
+      .hero {
+        h1 {
+          font-size: 2em;
+        }
+      }
+    }
+    .main__nav {
+      display: none;
+    }
+    .articles {
+      height: auto;
+      place-content: center;
+      .why__text {
+        height: auto;
+        .text {
+          grid-template-columns: repeat(2, 2fr);
+        }
+      }
+      .service {
+        height: auto;
+        place-content: center;
+        .hex-grid__list {
+          grid-template-columns: repeat(auto-fill, 1fr);
+          @for $i from 1 through 11 {
+            .hex-grid__item:nth-child(5n -1) {
+              margin-left: 40vw;
+            }
+          }
+        }
+        .hex-grid__item {
+          width: 30vw;
+          height: 30vw;
+        }
+      }
+    }
+    .working {
+      height: auto;
+      .working__articles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@include media-xl {
+  header {
+    .hero {
+      h1 {
+        font-size: 2.5em;
+      }
+    }
+  }
+  .articles {
+    height: auto;
+    .why__text {
+      height: auto;
+      .text {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .service {
+      height: auto;
+    }
+    .working {
+      height: auto;
+      .working__articles {
+        grid-template-columns: repeat(auto-fill, 350px);
+      }
+    }
+  }
+}

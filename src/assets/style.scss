@@ -1,0 +1,53 @@
+@import "scss/animations";
+@import "scss/config";
+@import "scss/styles";
+@import "scss/header";
+@import "scss/nav";
+@import "scss/articles";
+@import "scss/media";
+@import "scss/footer";
+
+$light-color: #fff;
+$primary-color: #7eb126;
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+$hero-height: 88vh;
+
+body {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  --s: 18vw;
+  --m: 2px;
+  --r: calc(var(--s) * 3 * 1.1547 / 2+ 4 * var(--m));
+}
+
+.nav__add {
+  display: block;
+}
+.remove {
+  display: none;
+}
+
+.nav__remove {
+  display: none;
+}
+
+.fab {
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.addColor {
+  z-index: 999;
+  color: #fff;
+}
+.overline {
+  border-top: 1px solid $primary-color;
+  padding-top: 10px;
+}
