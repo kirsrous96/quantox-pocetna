@@ -1,13 +1,4 @@
 //animations
-.animLeft {
-  animation-duration: 4s;
-  animation-name: slideleft;
-}
-.animRight {
-  animation-duration: 4s;
-  animation-name: slideright;
-}
-
 @keyframes slidein {
   from {
     top: 0;
@@ -18,22 +9,36 @@
     height: 105vh;
   }
 }
-@keyframes slideleft {
-  from {
-    left: -30vw;
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
   }
-
-  to {
-    left: 0vw;
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
-@keyframes slideright {
-  from {
-    right: -30vw;
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
   }
-
-  to {
-    right: 0vw;
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 

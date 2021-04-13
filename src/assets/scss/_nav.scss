@@ -1,5 +1,6 @@
 $primary-color: #7eb126;
 $light-color: #fff;
+$secondary-color: #333;
 
 nav {
   display: none;
@@ -69,23 +70,25 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
-  width: 14vw;
+  width: 18vw;
   height: 75vh;
   flex-direction: column;
-  color: #000;
+  justify-content: space-between;
+  color: $secondary-color;
   z-index: -1;
   img {
     width: 40px;
-    padding: 20px;
+    padding: 40px;
   }
   .nav {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+
+    padding: 40px;
     a {
       font-size: 1.2em;
       text-decoration: none;
-      color: #000;
+      color: $secondary-color;
       line-height: 2em;
       &:hover {
         color: $primary-color !important;
@@ -93,10 +96,10 @@ nav {
     }
   }
   .nav__footer {
-    color: #000;
+    color: $secondary-color;
     padding: 20px;
     a {
-      color: #000;
+      color: $secondary-color;
       font-size: 1.2em;
       text-decoration: none;
       padding: 2px;

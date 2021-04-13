@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap");
 @import "scss/animations";
 @import "scss/config";
 @import "scss/styles";
@@ -9,10 +10,16 @@
 
 $light-color: #fff;
 $primary-color: #7eb126;
+$secondary-color: #333;
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 $hero-height: 88vh;
@@ -20,7 +27,7 @@ $hero-height: 88vh;
 body {
   font-family: Montserrat, sans-serif;
   margin: 0;
-  --s: 18vw;
+  --s: 20vw;
   --m: 2px;
   --r: calc(var(--s) * 3 * 1.1547 / 2+ 4 * var(--m));
 }

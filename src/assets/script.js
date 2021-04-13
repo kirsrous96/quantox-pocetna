@@ -4,6 +4,7 @@ const navi = document.getElementById('navi');
 const hero = document.querySelector('.hero');
 const naviLeft = document.getElementById('naviLeft');
 const site = document.getElementById('site');
+const heroMouse = document.querySelector('.hero__mouse');
 const closeIt = document.getElementById('close');
 const foter = document.getElementById('foter');
 const service = document.getElementById('service');
@@ -18,11 +19,12 @@ const article3=document.querySelector('.working__article3');
 const article4=document.querySelector('.working__article4');
 const article5=document.querySelector('.working__article5');
 
-let first = true;
 
 window.onload = ()=> {
     hero.classList.add('animHero');
+
 }
+
 
 
 hamburger.addEventListener('click', () =>{
@@ -69,33 +71,29 @@ service.addEventListener('mouseenter', () =>{
 })
 
 working.addEventListener('mouseover',() =>{
-    if(first){
-        article1.classList.add('animLeft');
-        article2.classList.add('animRight');
-        article3.classList.add('animLeft');
-        article4.classList.add('animRight');
-        article5.classList.add('animLeft');
-    first = false;       
-}
-    
+    article1.classList.add('animLeft');
+    article2.classList.add('animRight');
+    article3.classList.add('animLeft');
+    article4.classList.add('animRight');
+    article5.classList.add('animLeft');
 })
 
 naviLeft.addEventListener('mouseleave', () =>{
     naviLeft.classList.remove('addColor');
     for (let i = 0; i < naviLeftnav.length; i++) {
-        naviLeftnav[i].style.color = "#000";
+        naviLeftnav[i].style.color = "#333";
       }
       for (let i = 0; i < navFooter.length; i++) {
-        navFooter[i].style.color = '#000';
+        navFooter[i].style.color = '#333';
       }
 })
 service.addEventListener('mouseleave', () =>{
     naviLeft.classList.remove('addColor');
     for (let i = 0; i < naviLeftnav.length; i++) {
-        naviLeftnav[i].style.color = "#000";
+        naviLeftnav[i].style.color = "#333";
       }
       for (let i = 0; i < navFooter.length; i++) {
-        navFooter[i].style.color = '#000';
+        navFooter[i].style.color = '#333';
       }
 })
 

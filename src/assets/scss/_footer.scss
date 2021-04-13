@@ -8,9 +8,9 @@ footer {
   .form {
     padding: 7vh;
     form {
-      padding: 5vh;
+      padding: 20vh;
       input {
-        width: 60vw;
+        width: 45vw;
         height: 3vh;
         border: none;
         background: transparent;
@@ -19,14 +19,16 @@ footer {
       }
       button {
         border-radius: 5em;
-        height: 4vh;
-        width: 100px;
+        height: 6vh;
+        width: 250px;
+        font-size: 20px;
         background: #2e2e2e;
         color: #fff;
       }
     }
   }
   .links {
+    padding: 13vh;
     background-image: linear-gradient(to right, #fff, #dbdbdb);
     .links__container {
       text-align: center;
@@ -34,16 +36,18 @@ footer {
     .nav {
       a {
         text-decoration: none;
+        padding: 20px;
         color: #111111;
         padding: 10px;
       }
     }
   }
   .social__links {
+    padding: 20px;
     text-align: center;
     img {
       width: 35px;
-      padding: 5px;
+      padding: 15px;
     }
   }
   .foot__copy {
