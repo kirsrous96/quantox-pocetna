@@ -1,9 +1,11 @@
+$dark-color: #000;
+
 @mixin before($text) {
   &::before {
     content: $text;
     text-transform: uppercase;
     opacity: 0.1;
-    color: #000000;
+    color: $dark-color;
     font-size: 300px;
     font-weight: bold;
     line-height: 218px;
@@ -14,8 +16,10 @@
   }
 }
 %heading {
-  padding-top: 5vh;
-  padding-left: 10vw;
+  padding-top: 15vh;
+  padding-left: 20vw;
+  font-weight: bolder;
+  font-size: 30px;
 }
 
 @mixin flex() {

@@ -10,6 +10,7 @@
 .articles {
   .why__back {
     @include before("WHY");
+
     height: 16vh;
     width: 40vw;
     background-position: center;
@@ -19,7 +20,8 @@
     }
   }
   .why__text {
-    padding-left: 15vw;
+    padding-left: 20vw;
+    padding-top: 10vh;
     height: 110vh;
 
     .text {
@@ -52,6 +54,9 @@
       .why__text7 {
         @include set-why("07");
       }
+      .why__text8 {
+        @include set-why("08");
+      }
     }
     #expand {
       display: none;
@@ -59,20 +64,21 @@
   }
   .service {
     h1 {
-      padding-top: 10vh;
+      @extend %heading;
+      padding-left: 5vw;
     }
-    color: #fff;
+    color: $light-color;
     height: 150vh;
     width: 87vw;
     padding-left: 18vw;
     margin-top: 10vh;
-    background-color: #000;
+    background-color: $dark-color;
     .hex-grid__list {
       display: flex;
       flex-wrap: wrap;
       margin: 0;
       padding: 0;
-      gap: 10px;
+      gap: 15px;
       a {
         text-decoration: none;
       }
@@ -116,6 +122,8 @@
       }
       .hex-grid__item {
         display: grid;
+        margin-top: 1vh;
+        margin-right: 0.5vw;
         place-content: center;
         width: var(--s);
         height: calc(var(--s) * 1.1547);
@@ -146,10 +154,11 @@
     }
   }
   .working {
-    height: 150vh;
+    height: auto;
     padding-bottom: 10vh;
     h1 {
       @extend %heading;
+      text-align: left;
     }
     .working__back {
       @include before("WORKING");
@@ -157,16 +166,11 @@
       width: 80vw;
       background-position: center;
       background-size: cover;
-      h1 {
-        padding-top: 10vh;
-        padding-left: 15vw;
-        text-align: left;
-      }
     }
     .working__articles {
-      padding-top: 5vh;
-      padding-left: 15vw;
       display: grid;
+      padding-top: 10vh;
+      padding-left: 20vw;
       grid-template-columns: repeat(2, 30vw);
       text-align: left;
       gap: 20vh;

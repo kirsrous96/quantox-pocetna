@@ -18,13 +18,13 @@ module.exports =merge(common,{
     ,
     plugins: [new MiniCssExtractPlugin({filename: "[name].[contenthash].css"}),
     new CleanWebpackPlugin()
-],
-module:{
-    rules:[
-        {
-            test: /\.scss$/,
-            use: [MiniCssExtractPlugin.loader,'css-loader','sass-loader']
-        }
-    ]
-}
+    ],
+    module:{
+        rules:[
+            {
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader,'css-loader','sass-loader']
+            }
+        ]
+    }
 })

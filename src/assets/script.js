@@ -1,30 +1,99 @@
+const $ = require( "jquery" )
+
+
 function scriptFile(){
 const hamburger = document.getElementById('hamburger');
 const navi = document.getElementById('navi');
 const hero = document.querySelector('.hero');
-const naviLeft = document.getElementById('naviLeft');
+
 const site = document.getElementById('site');
-const heroMouse = document.querySelector('.hero__mouse');
+
+const heroHeader = document.querySelector(".hero__header");
 const closeIt = document.getElementById('close');
 const foter = document.getElementById('foter');
-const service = document.getElementById('service');
-const naviLeftnav = document.getElementById('naviLeftnav').children;
-const navFooter = document.getElementById('nav__footer').children;
-const working = document.querySelector('.working')
+
+let navLogo = $('#navLogo');
+let hor= $('#Hor');
+let socialLinks = $('#social__links')
+
 const expand = document.getElementById('expand');
 const less = document.querySelectorAll('.less');
-const article1=document.querySelector('.working__article1');
-const article2=document.querySelector('.working__article2');
-const article3=document.querySelector('.working__article3');
-const article4=document.querySelector('.working__article4');
-const article5=document.querySelector('.working__article5');
 
+function mainNavAdd(){
+    let topHead = $('.header').height();
+    let topHero = $('.emtpy').height();
+    let topHide = topHead + topHero;
+    let docViewTop = $('#service').offset().top;
+    let topFooter = $('#foter').offset().top;
+    let docViewBottom = docViewTop + $('#service').height();
+    let navLink1 = $("#navLink1"),navLink2 = $("#navLink2"),navLink3 = $("#navLink3"),navLink4 = $("#navLink4"),navLink5 = $("#navLink5"),
+    navLink6 = $("#navLink6"),navLink7 = $("#navLink7"),navLink8 = $("#navLink8"),navLink9 = $("#navLink9"),navLink10 = $("#navLink10"),
+    navLink11 = $("#navLink11"),navLink12 = $("#navLink12"),navLink13 = $("#navLink13"),navLink14 = $("#navLink14");
+    let navLinks = [navLink1,navLink2,navLink3,navLink4,navLink5,navLink6,navLink7,navLink8,navLink9,navLink10,navLink11,navLink12,navLink13,navLink14];
+    let otherNav = [hor,socialLinks,navLogo];
+    for(let i=0;i< navLinks.length;i++){
+        let elemTop = navLinks[i];
+        if(elemTop.offset().top < topHide ||elemTop.offset().top > topFooter){
+            elemTop.addClass("removeLinks");
+        }else{
+            elemTop.removeClass("removeLinks");
+        }
+    }
+    for(let i=0;i< otherNav.length;i++){
+        let other = otherNav[i];
+        if(other.offset().top < topHide || other.offset().top > topFooter){
+            other.addClass("removeLinks");
+        }else{
+            other.removeClass("removeLinks");
+        }
+    }
 
-window.onload = ()=> {
-    hero.classList.add('animHero');
-
+    for(let i=0;i< navLinks.length;i++){
+        let elemTop = navLinks[i];
+        if(elemTop.offset().top > docViewTop && elemTop.offset().top< docViewBottom){
+            elemTop.addClass("addLinks");
+            
+        }else{
+            elemTop.removeClass("addLinks");
+        }
+    }
 }
 
+function sectionWorkorkingAdd(){
+
+    let docViewTop = $('.working').offset().top;
+    let docViewBottom = docViewTop + $('.working').height();
+    let article1=$('.working__article1');
+    let article2=$('.working__article2');
+    let article3=$('.working__article3');
+    let article4=$('.working__article4');
+    let article5=$('.working__article5');
+    if($(window).scrollTop() > docViewTop && $(window).scrollTop() < docViewBottom){
+        article1.addClass('animLeft');
+        article2.addClass('animRight');
+        article3.addClass('animLeft');
+        article4.addClass('animRight');
+        article5.addClass('animLeft');
+    }else{
+        article1.removeClass('animLeft');
+        article2.removeClass('animRight');
+        article3.removeClass('animLeft');
+        article4.removeClass('animRight');
+        article5.removeClass('animLeft');
+    }
+}
+
+window.onload = ()=> {
+    mainNavAdd();
+    sectionWorkorkingAdd();
+    hero.classList.add('animHero');
+    heroHeader.style.animationDelay = ".4s";
+    
+}
+$(window).scroll(function(){
+    mainNavAdd();
+    sectionWorkorkingAdd();
+})
 
 
 hamburger.addEventListener('click', () =>{
@@ -39,71 +108,11 @@ closeIt.addEventListener('click', () =>{
     foter.classList.remove('remove');
 })
 
-foter.addEventListener('mouseenter', () =>{
-    naviLeft.classList.remove('main__nav');
-    naviLeft.classList.add('nav__remove');
-})
-foter.addEventListener('mouseleave',() =>{
-    naviLeft.classList.remove('nav__remove');
-    naviLeft.classList.add('main__nav');
-})
-
-naviLeft.addEventListener('mouseenter', () =>{
-    naviLeft.classList.add('addColor');
-    for (let i = 0; i < naviLeftnav.length; i++) {
-        naviLeftnav[i].style.color = "#fff";
-      }
-      for (let i = 0; i < navFooter.length; i++) {
-        navFooter[i].style.color = '#fff';
-      }
-      
-})
-
-service.addEventListener('mouseenter', () =>{
-    naviLeft.classList.add('addColor');
-    for (let i = 0; i < naviLeftnav.length; i++) {
-        naviLeftnav[i].style.color = "#fff";
-      }
-      for (let i = 0; i < navFooter.length; i++) {
-        navFooter[i].style.color = '#fff';
-      }
-      
-})
-
-working.addEventListener('mouseover',() =>{
-    article1.classList.add('animLeft');
-    article2.classList.add('animRight');
-    article3.classList.add('animLeft');
-    article4.classList.add('animRight');
-    article5.classList.add('animLeft');
-})
-
-naviLeft.addEventListener('mouseleave', () =>{
-    naviLeft.classList.remove('addColor');
-    for (let i = 0; i < naviLeftnav.length; i++) {
-        naviLeftnav[i].style.color = "#333";
-      }
-      for (let i = 0; i < navFooter.length; i++) {
-        navFooter[i].style.color = '#333';
-      }
-})
-service.addEventListener('mouseleave', () =>{
-    naviLeft.classList.remove('addColor');
-    for (let i = 0; i < naviLeftnav.length; i++) {
-        naviLeftnav[i].style.color = "#333";
-      }
-      for (let i = 0; i < navFooter.length; i++) {
-        navFooter[i].style.color = '#333';
-      }
-})
-
 expand.addEventListener('click',() =>{
     for (let i = 0; i <expand.length; i++) {
     less[i].classList.remove('less');
     less[i].classList.add('more');
     }
 });
-
 };
-
 export default scriptFile;

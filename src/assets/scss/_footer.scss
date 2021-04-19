@@ -1,57 +1,74 @@
 footer {
   @include before("MAILING");
   width: 100vw;
-  background: #e5e5e5;
+  background: url("https://quantox.com/assets/img/footer-pattern.png");
+  background-size: cover;
   .form__container {
     text-align: center;
   }
   .form {
-    padding: 7vh;
+    padding: 5vh;
+    background: #e5e5e5;
     form {
-      padding: 20vh;
+      padding: 15vh;
       input {
         width: 45vw;
         height: 3vh;
         border: none;
         background: transparent;
+        padding-top: 30px;
+        font-size: 18px;
         outline: none;
         border-bottom: 1px solid;
       }
       button {
+        border: none;
         border-radius: 5em;
         height: 6vh;
         width: 250px;
         font-size: 20px;
+        font-weight: bold;
         background: #2e2e2e;
-        color: #fff;
+        color: $light-color;
       }
     }
   }
   .links {
-    padding: 13vh;
-    background-image: linear-gradient(to right, #fff, #dbdbdb);
+    padding: 10vh;
+
     .links__container {
       text-align: center;
     }
     .nav {
       a {
         text-decoration: none;
-        padding: 20px;
-        color: #111111;
-        padding: 10px;
+        padding: 15px;
+        color: $dark-color;
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
   .social__links {
-    padding: 20px;
+    padding: 15px;
     text-align: center;
+    a {
+      padding: 10px;
+      text-decoration: none;
+      color: $dark-color;
+    }
     img {
       width: 35px;
-      padding: 15px;
+      padding: 10px;
     }
   }
   .foot__copy {
     background: #fff;
     text-align: center;
+    a {
+      color: $primary-color;
+      text-decoration: none;
+    }
   }
 }

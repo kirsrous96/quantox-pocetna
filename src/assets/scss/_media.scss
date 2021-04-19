@@ -44,10 +44,10 @@
       height: auto;
       .hex-grid__list {
         grid-template-columns: repeat(auto-fill, 1fr);
+        gap: 20px;
         @for $i from 1 through 11 {
           .hex-grid__item:nth-child(3n) {
-            margin-left: 18vw;
-            margin-top: -3vw;
+            margin: -2vh 18vw -4vh;
           }
         }
         .hex-grid__item {
@@ -91,14 +91,15 @@
       padding-bottom: 10vh;
       .hex-grid__list {
         grid-template-columns: repeat(auto-fill, 1fr);
+        gap: 25px;
         @for $i from 1 through 11 {
           .hex-grid__item:nth-child(5n -1) {
             margin-left: 13vw;
           }
         }
         .hex-grid__item {
-          width: 25vw;
-          height: 25vw;
+          width: 24vw;
+          height: 24vw;
         }
         .hex-5 {
           margin-left: 0;
@@ -135,6 +136,15 @@
     .service {
       height: auto;
       padding-bottom: 15vh;
+      .hex-grid__list {
+        gap: 20px;
+        .hex-grid__item {
+          width: 19vw;
+          height: 19vw;
+          margin-top: 2vh;
+          margin-right: 0.5vw;
+        }
+      }
     }
     .working {
       height: auto;

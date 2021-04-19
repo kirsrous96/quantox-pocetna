@@ -11,23 +11,28 @@
 $light-color: #fff;
 $primary-color: #7eb126;
 $secondary-color: #333;
-
+$dark-color: #000;
 html {
   scroll-behavior: smooth;
+}
 
+:export {
+  primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  lightColor: $light-color;
+  darkColor: $dark-color;
+}
+$hero-height: 88vh;
+
+body {
   &::-webkit-scrollbar {
     display: none;
   }
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-$hero-height: 88vh;
-
-body {
   font-family: Montserrat, sans-serif;
   margin: 0;
-  --s: 20vw;
+  --s: 19vw;
   --m: 2px;
   --r: calc(var(--s) * 3 * 1.1547 / 2+ 4 * var(--m));
 }
@@ -37,6 +42,12 @@ body {
 }
 .remove {
   display: none;
+}
+.addLinks {
+  color: #fff !important;
+}
+.removeLinks {
+  visibility: hidden;
 }
 
 .nav__remove {

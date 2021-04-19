@@ -1,3 +1,5 @@
+$light-color: #fff;
+
 header {
   background: url("https://quantox.com/assets/img/quantox-logo-bkg.png");
   position: relative;
@@ -22,43 +24,48 @@ header {
           text-decoration: none;
           color: #fff;
           line-height: 2em;
+          &:active {
+            background-color: grey;
+          }
         }
       }
-      img {
+
+      i {
         cursor: pointer;
-        background-color: #fff;
         padding: 5px 10px;
-        width: 40px;
+        size: 9px;
       }
     }
   }
   .emtpy {
     width: 100vw;
     height: 88vh;
-    background-color: #fff;
+    background-color: $light-color;
     .hero {
       position: relative;
       width: 100%;
       height: 106vh;
-      color: #fff;
+      color: $light-color;
       display: grid;
       background: url("https://quantox.com/assets/img/quantox-logo-bkg.png");
       top: -15vh;
       margin-bottom: 0;
       a {
         place-self: end center;
-        padding-bottom: 10vh;
-        img {
+        margin-bottom: 10vh;
+        i {
           width: 50px;
         }
       }
       h1 {
+        overflow: hidden;
         border-right: 0.15em solid #e5e5e5;
         font-size: 3vw;
         white-space: nowrap;
         letter-spacing: 0.15em;
         place-self: end center;
-        animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        animation: typing 3.5s steps(30, end),
+          blink-caret 0.75s step-end infinite;
       }
     }
   }

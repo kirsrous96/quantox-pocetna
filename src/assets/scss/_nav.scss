@@ -1,12 +1,13 @@
 $primary-color: #7eb126;
 $light-color: #fff;
 $secondary-color: #333;
+$dark-color: #000;
 
 nav {
   display: none;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background-color: $dark-color;
   .navigation {
     @include flex();
     padding-bottom: 0;
@@ -27,7 +28,7 @@ nav {
       a {
         font-size: 1.2em;
         text-decoration: none;
-        color: #fff;
+        color: $light-color;
         line-height: 2em;
         &:hover {
           color: $primary-color;
@@ -35,12 +36,15 @@ nav {
       }
     }
     .navi__footer {
-      color: #fff;
+      color: $light-color;
       a {
-        color: #fff;
+        color: $light-color;
         font-size: 1.4em;
         text-decoration: none;
         padding: 2px;
+        &:active {
+          background-color: grey !important;
+        }
       }
       .social__links {
         display: flex;
@@ -49,18 +53,20 @@ nav {
       }
     }
   }
-  .nav__close {
+  .fa-times {
     cursor: pointer;
+    position: absolute;
     float: right;
     width: 40px;
-    margin-top: 30px;
-    margin-right: 40px;
-    background-color: #fff;
+    height: 50px;
+    top: 30px;
+    right: 40px;
+    color: $light-color;
   }
 }
 
 .animHero {
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-name: slidein;
 }
 .main__navColor {
@@ -70,15 +76,16 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
-  width: 18vw;
-  height: 75vh;
+  width: 16vw;
+  height: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: $secondary-color;
-  z-index: -1;
   img {
     width: 40px;
-    padding: 40px;
+    padding-top: 6vh;
+    padding-left: 3vh;
   }
   .nav {
     display: flex;
@@ -89,15 +96,18 @@ nav {
       font-size: 1.2em;
       text-decoration: none;
       color: $secondary-color;
-      line-height: 2em;
+      line-height: 2.5em;
       &:hover {
         color: $primary-color !important;
+      }
+      &:active {
+        background-color: grey !important;
       }
     }
   }
   .nav__footer {
     color: $secondary-color;
-    padding: 20px;
+    padding: 3vh 2vh 5vh;
     a {
       color: $secondary-color;
       font-size: 1.2em;
