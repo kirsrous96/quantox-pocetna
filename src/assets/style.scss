@@ -1,30 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap");
-@import "scss/animations";
-@import "scss/config";
-@import "scss/styles";
-@import "scss/header";
-@import "scss/nav";
-@import "scss/articles";
-@import "scss/media";
-@import "scss/footer";
 
-$light-color: #fff;
-$primary-color: #7eb126;
-$secondary-color: #333;
-$dark-color: #000;
 html {
   scroll-behavior: smooth;
 }
 
-:export {
-  primaryColor: $primary-color;
-  secondaryColor: $secondary-color;
-  lightColor: $light-color;
-  darkColor: $dark-color;
-}
-$hero-height: 88vh;
-
 body {
+  margin: 0;
+  padding: 0;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -32,7 +14,7 @@ body {
   scrollbar-width: none;
   font-family: Montserrat, sans-serif;
   margin: 0;
-  --s: 19vw;
+  --s: 20vw;
   --m: 2px;
   --r: calc(var(--s) * 3 * 1.1547 / 2+ 4 * var(--m));
 }
@@ -53,6 +35,13 @@ body {
 .nav__remove {
   display: none;
 }
+.expand {
+  display: block;
+}
+
+.more {
+  display: block;
+}
 
 .fab {
   font-size: 34px;
@@ -65,7 +54,13 @@ body {
   z-index: 999;
   color: #fff;
 }
-.overline {
-  border-top: 1px solid $primary-color;
-  padding-top: 10px;
-}
+
+@import "scss/animations";
+@import "scss/variables";
+@import "scss/mixins";
+@import "scss/articles";
+@import "scss/config";
+@import "scss/header";
+@import "scss/nav";
+@import "scss/footer";
+@import "scss/media";

@@ -1,41 +1,52 @@
 footer {
   @include before("MAILING");
   width: 100vw;
-  background: url("https://quantox.com/assets/img/footer-pattern.png");
-  background-size: cover;
   .form__container {
-    text-align: center;
-  }
-  .form {
-    padding: 5vh;
     background: #e5e5e5;
-    form {
-      padding: 15vh;
-      input {
-        width: 45vw;
-        height: 3vh;
-        border: none;
-        background: transparent;
-        padding-top: 30px;
-        font-size: 18px;
-        outline: none;
-        border-bottom: 1px solid;
+    h1 {
+      @extend %heading;
+      padding-left: 21vw;
+      @include media-md {
+        padding-left: 6vh;
+        font-size: 2em;
       }
-      button {
-        border: none;
-        border-radius: 5em;
-        height: 6vh;
-        width: 250px;
-        font-size: 20px;
-        font-weight: bold;
-        background: #2e2e2e;
-        color: $light-color;
+      @include media-lg {
+        padding-left: 12vw;
+        font-size: 2.5em;
+      }
+    }
+    .form {
+      text-align: center;
+      form {
+        padding: 5vh;
+        input {
+          width: 45vw;
+          height: 3vh;
+          border: none;
+          background: transparent;
+          padding-top: 30px;
+          font-size: 18px;
+          outline: none;
+          border-bottom: 1px solid;
+        }
+        button {
+          border: none;
+          border-radius: 5em;
+          height: 6vh;
+          width: 250px;
+          font-size: 20px;
+          font-weight: bold;
+          background: #2e2e2e;
+          color: $light-color;
+        }
       }
     }
   }
   .links {
     padding: 10vh;
-
+    background: url("https://quantox.com/assets/img/footer-pattern.png");
+    background-size: cover;
+    height: 100%;
     .links__container {
       text-align: center;
     }

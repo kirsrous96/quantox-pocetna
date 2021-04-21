@@ -10,7 +10,7 @@
 .articles {
   .why__back {
     @include before("WHY");
-
+    margin-top: -25px;
     height: 16vh;
     width: 40vw;
     background-position: center;
@@ -18,11 +18,16 @@
     h1 {
       @extend %heading;
     }
+    @include media-lg {
+      h1 {
+        padding-left: 20vw;
+      }
+    }
   }
   .why__text {
-    padding-left: 20vw;
+    padding-left: 14vw;
     padding-top: 10vh;
-    height: 110vh;
+    height: auto;
 
     .text {
       display: grid;
@@ -57,100 +62,195 @@
       .why__text8 {
         @include set-why("08");
       }
+      @include media-md {
+        display: flex;
+        flex-direction: column;
+        .less {
+          display: none;
+        }
+      }
+      @include media-lg {
+        grid-template-columns: repeat(2, 2fr);
+      }
+      @include media-xl {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
     #expand {
       display: none;
     }
+    @include media-md {
+      padding-left: 0;
+    }
+    @include media-lg {
+      padding-left: 17vw;
+    }
   }
   .service {
+    height: auto;
+    width: 100vw;
+    padding-bottom: 40vh;
+    background-color: $dark-color;
     h1 {
       @extend %heading;
-      padding-left: 5vw;
+      background-color: $dark-color;
     }
     color: $light-color;
-    height: 150vh;
-    width: 87vw;
-    padding-left: 18vw;
-    margin-top: 10vh;
-    background-color: $dark-color;
-    .hex-grid__list {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-      gap: 15px;
-      a {
-        text-decoration: none;
-      }
-      .hex-1 {
-        @include set-service("https://quantox.com/assets/img/mobile.png");
-      }
-      .hex-2 {
-        @include set-service("https://quantox.com/assets/img/system-admin.png");
-      }
-      .hex-3 {
-        @include set-service("https://quantox.com/assets/img/be.png");
-      }
-      .hex-4 {
-        @include set-service("https://quantox.com/assets/img/consulting1.png");
-      }
-      .hex-5 {
-        margin-left: 10vw;
-        @include set-service("https://quantox.com/assets/img/fe.png");
-      }
-      .hex-6 {
-        @include set-service("https://quantox.com/assets/img/design.png");
-      }
-      .hex-7 {
-        @include set-service("https://quantox.com/assets/img/tech-support.png");
-      }
-      .hex-8 {
-        @include set-service(
-          "https://quantox.com/assets/img/virtual-assistant1.png"
-        );
-      }
-      .hex-9 {
-        @include set-service(
-          "https://quantox.com/assets/img/customer-support1.png"
-        );
-      }
-      .hex-10 {
-        @include set-service("https://quantox.com/assets/img/copywriting.png");
-      }
-      .hex-11 {
-        @include set-service("https://quantox.com/assets/img/video-edit.png");
-      }
-      .hex-grid__item {
-        display: grid;
-        margin-top: 1vh;
-        margin-right: 0.5vw;
-        place-content: center;
-        width: var(--s);
-        height: calc(var(--s) * 1.1547);
-        background-color: #394d1c;
-        margin-bottom: calc(var(--m) - var(--s) * 0.2885);
-        &:hover {
-          background-color: rgba(117, 165, 44, 0.4);
+    .service__text {
+      padding-top: 5vh;
+      width: 87vw;
+      background-color: $dark-color;
+      padding-left: 16vw;
+      .hex-grid__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        gap: 15px;
+        a {
+          text-decoration: none;
         }
-        clip-path: polygon(
-          0% 25%,
-          0% 75%,
-          50% 100%,
-          100% 75%,
-          100% 25%,
-          50% 0%
-        );
+        .hex-1 {
+          @include set-service("https://quantox.com/assets/img/mobile.png");
+        }
+        .hex-2 {
+          @include set-service(
+            "https://quantox.com/assets/img/system-admin.png"
+          );
+        }
+        .hex-3 {
+          @include set-service("https://quantox.com/assets/img/be.png");
+        }
+        .hex-4 {
+          @include set-service(
+            "https://quantox.com/assets/img/consulting1.png"
+          );
+        }
+        .hex-5 {
+          margin-left: 10vw;
+          @include set-service("https://quantox.com/assets/img/fe.png");
+        }
+        .hex-6 {
+          @include set-service("https://quantox.com/assets/img/design.png");
+        }
+        .hex-7 {
+          @include set-service(
+            "https://quantox.com/assets/img/tech-support.png"
+          );
+        }
+        .hex-8 {
+          @include set-service(
+            "https://quantox.com/assets/img/virtual-assistant1.png"
+          );
+        }
+        .hex-9 {
+          @include set-service(
+            "https://quantox.com/assets/img/customer-support1.png"
+          );
+        }
+        .hex-10 {
+          @include set-service(
+            "https://quantox.com/assets/img/copywriting.png"
+          );
+        }
+        .hex-11 {
+          @include set-service("https://quantox.com/assets/img/video-edit.png");
+        }
+        .hex-grid__item {
+          display: grid;
+          margin-top: 0.5vh;
+          margin-right: 0.25vw;
+          place-content: center;
+          text-align: center;
+          width: var(--s);
+          height: calc(var(--s) * 1.1547);
+          background-color: #394d1c;
+          margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+          &:hover {
+            background-color: rgba(117, 165, 44, 0.4);
+          }
+          clip-path: polygon(
+            0% 25%,
+            0% 75%,
+            50% 100%,
+            100% 75%,
+            100% 25%,
+            50% 0%
+          );
+        }
+        .hex-grid__item::before {
+          content: "";
+          width: calc(var(--s) / 4 + var(--m));
+          float: left;
+          height: 100%;
+          shape-outside: repeating-linear-gradient(
+            transparent 0 calc(var(--r) - 3px),
+            #fff 0 var(--r)
+          );
+        }
+        @include media-md {
+          grid-template-columns: repeat(auto-fill, 1fr);
+          gap: 10px;
+          @for $i from 1 through 11 {
+            a:nth-child(3n) {
+              margin: -4vh 20vw -4vh;
+            }
+          }
+          a {
+            .hex-grid__item {
+              width: 40vw;
+              height: 40vw;
+            }
+            .hex-5 {
+              margin-left: 0;
+            }
+          }
+        }
+        @include media-lg {
+          grid-template-columns: repeat(auto-fill, 1fr);
+          gap: 15px;
+          @for $i from 1 through 11 {
+            a:nth-child(5n -1) {
+              margin-left: 13vw;
+            }
+          }
+          .hex-grid__item {
+            width: 25vw;
+            height: 25vw;
+          }
+          .hex-5 {
+            margin-left: 0;
+          }
+        }
+        @include media-xl {
+          gap: 20px;
+          .hex-grid__item {
+            width: 19vw;
+            height: 19vw;
+            margin-top: 1vh;
+            margin-right: 0.25vw;
+          }
+        }
       }
-      .hex-grid__item::before {
-        content: "";
-        width: calc(var(--s) / 4 + var(--m));
-        float: left;
-        height: 100%;
-        shape-outside: repeating-linear-gradient(
-          transparent 0 calc(var(--r) - 3px),
-          #fff 0 var(--r)
-        );
+      @include media-md {
+        padding-left: 10vw;
       }
+      @include media-lg {
+        padding-left: 20vw;
+      }
+    }
+    @include media-md {
+      padding-bottom: 15vh;
+    }
+    @include media-lg {
+      place-content: center;
+      padding-bottom: 10vh;
+      h1 {
+        padding-left: 20vw;
+      }
+    }
+    @include media-xl {
+      padding-bottom: 15vh;
     }
   }
   .working {
@@ -159,9 +259,13 @@
     h1 {
       @extend %heading;
       text-align: left;
+      @include media-lg {
+        padding-left: 20vw;
+      }
     }
     .working__back {
       @include before("WORKING");
+      margin-top: -35px;
       height: 15vh;
       width: 80vw;
       background-position: center;
@@ -170,7 +274,7 @@
     .working__articles {
       display: grid;
       padding-top: 10vh;
-      padding-left: 20vw;
+      padding-left: 16vw;
       grid-template-columns: repeat(2, 30vw);
       text-align: left;
       gap: 20vh;
@@ -188,6 +292,17 @@
       }
       .working__article5 {
         @include set-working("https://quantox.com/assets/img/pic-5.png");
+      }
+      @include media-md {
+        padding-left: 5vw;
+        grid-template-columns: repeat(1, 1fr);
+      }
+      @include media-lg {
+        padding-left: 20vw;
+        grid-template-columns: repeat(auto-fill, 250px);
+      }
+      @include media-xl {
+        grid-template-columns: repeat(auto-fill, 300px);
       }
     }
   }

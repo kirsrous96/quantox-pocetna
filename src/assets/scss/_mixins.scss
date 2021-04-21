@@ -1,0 +1,73 @@
+$dark-color: #000;
+
+@mixin before($text) {
+  &::before {
+    content: $text;
+    text-transform: uppercase;
+    opacity: 0.1;
+    color: $dark-color;
+    font-size: 300px;
+    font-weight: bold;
+    line-height: 218px;
+    margin-left: 0;
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@mixin flex() {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin set-why($number) {
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  &::before {
+    content: $number;
+    opacity: 0.1;
+    color: $secondary-color;
+    font-size: 200px;
+    line-height: 200px;
+    z-index: 9;
+    position: absolute;
+    top: -70px;
+  }
+}
+
+@mixin set-service($image) {
+  background-image: url($image);
+  background-position: center;
+  background-size: contain;
+  opacity: 0.4;
+  color: $light-color;
+  font-size: 18px;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@mixin set-working($image) {
+  background: url($image);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin media-lg {
+  @media screen and (min-width: 768px) and (max-width: 990px) {
+    @content;
+  }
+}
+@mixin media-xl {
+  @media screen and (min-width: 990px) and (max-width: 1300px) {
+    @content;
+  }
+}

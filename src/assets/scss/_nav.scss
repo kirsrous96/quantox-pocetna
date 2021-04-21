@@ -1,8 +1,3 @@
-$primary-color: #7eb126;
-$light-color: #fff;
-$secondary-color: #333;
-$dark-color: #000;
-
 nav {
   display: none;
   width: 100vw;
@@ -21,9 +16,8 @@ nav {
       }
     }
     .nav {
-      display: flex;
+      @include flex();
       flex-direction: column;
-      align-content: space-between;
       text-align: center;
       a {
         font-size: 1.2em;
@@ -47,8 +41,7 @@ nav {
         }
       }
       .social__links {
-        display: flex;
-        justify-content: space-around;
+        @include flex();
         margin-bottom: 0;
       }
     }
@@ -78,9 +71,8 @@ nav {
   top: 0;
   width: 16vw;
   height: 100%;
-  display: flex;
+  @include flex();
   flex-direction: column;
-  justify-content: space-between;
   color: $secondary-color;
   img {
     width: 40px;
@@ -88,7 +80,7 @@ nav {
     padding-left: 3vh;
   }
   .nav {
-    display: flex;
+    @include flex();
     flex-direction: column;
 
     padding: 40px;
@@ -121,5 +113,8 @@ nav {
       width: 40px;
       padding: 0;
     }
+  }
+  @include media-md {
+    display: none;
   }
 }
