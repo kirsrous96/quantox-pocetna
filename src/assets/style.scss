@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap");
-
+@import "scss/animations";
+@import "scss/variables";
+@import "scss/mixins";
+@import "scss/articles";
+@import "scss/config";
+@import "scss/header";
+@import "scss/nav";
+@import "scss/footer";
 html {
   scroll-behavior: smooth;
 }
@@ -54,13 +61,3 @@ body {
   z-index: 999;
   color: #fff;
 }
-
-@import "scss/animations";
-@import "scss/variables";
-@import "scss/mixins";
-@import "scss/articles";
-@import "scss/config";
-@import "scss/header";
-@import "scss/nav";
-@import "scss/footer";
-@import "scss/media";
