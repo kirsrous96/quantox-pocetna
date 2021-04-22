@@ -256,13 +256,6 @@
   .working {
     height: auto;
     padding-bottom: 10vh;
-    h1 {
-      @extend %heading;
-      text-align: left;
-      @include media-lg {
-        padding-left: 20vw;
-      }
-    }
     .working__back {
       @include before("WORKING");
       margin-top: -35px;
@@ -270,6 +263,13 @@
       width: 80vw;
       background-position: center;
       background-size: cover;
+      h1 {
+        @extend %heading;
+        text-align: left;
+        @include media-lg {
+          padding-left: 20vw;
+        }
+      }
     }
     .working__articles {
       display: grid;

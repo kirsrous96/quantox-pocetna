@@ -52,7 +52,7 @@ $dark-color: #000;
 @mixin set-working($image) {
   background: url($image);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: auto;
   background-position: center;
 }
 
