@@ -106,7 +106,7 @@
         flex-wrap: wrap;
         margin: 0;
         padding: 0;
-        gap: 15px;
+        gap: 10px;
         a {
           text-decoration: none;
         }
@@ -127,7 +127,7 @@
           );
         }
         .hex-5 {
-          margin-left: 10vw;
+          margin-left: 10.5vw;
           @include set-service("https://quantox.com/assets/img/fe.png");
         }
         .hex-6 {
@@ -190,10 +190,9 @@
         }
         @include media-md {
           grid-template-columns: repeat(auto-fill, 1fr);
-          gap: 10px;
           @for $i from 1 through 11 {
             a:nth-child(3n) {
-              margin: -4vh 20vw -4vh;
+              margin: -4vh 21vw -4vh;
             }
           }
           a {
@@ -208,7 +207,7 @@
         }
         @include media-lg {
           grid-template-columns: repeat(auto-fill, 1fr);
-          gap: 15px;
+          gap: 10px;
           @for $i from 1 through 11 {
             a:nth-child(5n -1) {
               margin-left: 13vw;
@@ -223,12 +222,14 @@
           }
         }
         @include media-xl {
-          gap: 20px;
           .hex-grid__item {
             width: 19vw;
             height: 19vw;
             margin-top: 1vh;
             margin-right: 0.25vw;
+          }
+          .hex-5 {
+            margin-left: 10vw;
           }
         }
       }
