@@ -113,6 +113,9 @@ nav {
       width: 40px;
       padding: 0;
     }
+    i {
+      padding: 5px;
+    }
   }
   @include media-md {
     display: none;

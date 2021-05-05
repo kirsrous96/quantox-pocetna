@@ -9,10 +9,6 @@ module.exports = merge(common, {
         filename: 'main.js',
         path: path.resolve(__dirname, "dist") 
     },
-    plugins:[new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-      })],
     module:{
         rules:[
             {
