@@ -9,6 +9,10 @@ module.exports = merge(common, {
         filename: 'main.js',
         path: path.resolve(__dirname, "dist") 
     },
+    devServer: {
+        inline: true,
+        port: 3001
+    },
     module:{
         rules:[
             {

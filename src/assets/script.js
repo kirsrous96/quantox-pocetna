@@ -1,15 +1,7 @@
 module.exports = (function scriptFile(){
     const query = document.querySelector.bind(document);
-    const hamburger = document.getElementById('hamburger');
-    const navi = document.getElementById('navi');
-    const hero = query('.hero');
-    const site = document.getElementById('site');
-    const heroHeader = query(".hero__header");
+    const hamburger = query('#hamburger');
     const closeIt = document.getElementById('close');
-    const foter = document.getElementById('foter');
-    let navLogo = document.getElementById('navLogo');
-    let hor= document.getElementById('Hor');
-    let socialLinks = document.getElementById('social__links');
     const expand = document.getElementById('expand');
     const less = document.querySelectorAll('.less');
 
@@ -20,6 +12,9 @@ module.exports = (function scriptFile(){
         let docViewTop = query('#service').offsetTop;
         let topFooter = query('#foter').offsetTop;
         let docViewBottom = docViewTop + query('#service').clientHeight;
+        let navLogo = query('#navLogo');
+        let hor = query('#Hor');
+        let socialLinks = query('#social__links');
         let navLink1 = query("#navLink1"),navLink2 = query("#navLink2"),navLink3 = query("#navLink3"),navLink4 = query("#navLink4"),navLink5 = query("#navLink5"),
         navLink6 = query("#navLink6"),navLink7 = query("#navLink7"),navLink8 = query("#navLink8"),navLink9 = query("#navLink9"),navLink10 = query("#navLink10"),
         navLink11 = query("#navLink11"),navLink12 = query("#navLink12"),navLink13 = query("#navLink13"),navLink14 = query("#navLink14");
@@ -58,26 +53,31 @@ module.exports = (function scriptFile(){
         let docViewTop = query('.working').offsetTop;
         let docViewBottom = docViewTop + query('.working').offsetHeight;
         let windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let article1=query('.working__article1');
-        let article2=query('.working__article2');
-        let article3=query('.working__article3');
-        let article4=query('.working__article4');
-        let article5=query('.working__article5');
+        let articles = document.querySelectorAll('.article');
         if(windowScroll > docViewTop && windowScroll < docViewBottom){
-            article1.classList.add('animLeft');
-            article2.classList.add('animRight');
-            article3.classList.add('animLeft');
-            article4.classList.add('animRight');
-            article5.classList.add('animLeft');
+            console.log(articles.length);
+            for (let i = 0; i < articles.length; i++) {
+                console.log(i);
+                if(i % 2 !== 0){
+                    console.log('works?');
+                    articles[i].classList.add('animRight');
+                }
+                articles[i].classList.add('animLeft'); 
+            }
         }else{
-            article1.classList.remove('animLeft');
-            article2.classList.remove('animRight');
-            article3.classList.remove('animLeft');
-            article4.classList.remove('animRight');
-            article5.classList.remove('animLeft');
+            for (let i = 0; i < articles.length; i++) {
+                
+                if(i % 2 !== 0){
+                    console.log('works?');
+                    articles[i].classList.remove('animRight');
+                }
+                articles[i].classList.remove('animLeft');
+            }
         }
     }
     document.addEventListener('DOMContentLoaded', (event) => {
+        let hero = query('.hero');
+        let heroHeader = query("#hero__header");
         mainNavAdd();
         sectionWorkorkingAdd();
         hero.classList.add('animHero');
@@ -88,22 +88,24 @@ module.exports = (function scriptFile(){
         mainNavAdd();
         sectionWorkorkingAdd();
     }
-
-
-    hamburger.addEventListener('click', () =>{
-        navi.classList.add('nav__add');
-        site.classList.add('remove');
-        foter.classList.add('remove');
-    })
-    closeIt.addEventListener('click', () =>{
-        navi.classList.remove('nav__add');
-        site.classList.remove('remove');
-        foter.classList.remove('remove');
-    })
-    expand.addEventListener('click',() =>{
-        for (let i = 0; i <expand.length; i++) {
-        less[i].classList.remove('less');
-        less[i].classList.add('more');
-        }
-    });
+    
+    // hamburger.addEventListener('click',() =>{
+    //     let navi = query('#navi');
+    //     let site = query('#site');
+    //     let foter = query('#foter');
+    //     navi.classList.add('nav__add');
+    //     site.classList.add('remove');
+    //     foter.classList.add('remove');
+    // })
+    // closeIt.addEventListener('click',() =>{
+    //     navi.classList.remove('nav__add');
+    //     site.classList.remove('remove');
+    //     foter.classList.remove('remove');
+    // })
+    // expand.addEventListener('click',() =>{
+    //     for (let i = 0; i <expand.length; i++) {
+    //     less[i].classList.remove('less');
+    //     less[i].classList.add('more');
+    //     }
+    // });
 })();

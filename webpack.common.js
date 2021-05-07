@@ -23,6 +23,16 @@ module.exports = {
                 test: /\.html$/,
                 use: ["html-loader"]
             },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options:{
+                    presets: [
+                        ['@babel/preset-env', { targets: "defaults" }]
+                      ]
+                  }
+             }
         ]
     }
 }
