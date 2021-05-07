@@ -1,4 +1,4 @@
-module.exports = (function scriptFile(){
+export default (function scriptFile(){
     const query = document.querySelector.bind(document);
     const hamburger = query('#hamburger');
     const closeIt = document.getElementById('close');
@@ -57,9 +57,7 @@ module.exports = (function scriptFile(){
         if(windowScroll > docViewTop && windowScroll < docViewBottom){
             console.log(articles.length);
             for (let i = 0; i < articles.length; i++) {
-                console.log(i);
                 if(i % 2 !== 0){
-                    console.log('works?');
                     articles[i].classList.add('animRight');
                 }
                 articles[i].classList.add('animLeft'); 
@@ -68,7 +66,6 @@ module.exports = (function scriptFile(){
             for (let i = 0; i < articles.length; i++) {
                 
                 if(i % 2 !== 0){
-                    console.log('works?');
                     articles[i].classList.remove('animRight');
                 }
                 articles[i].classList.remove('animLeft');
