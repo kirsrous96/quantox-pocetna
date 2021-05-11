@@ -55,7 +55,6 @@ export default (function scriptFile(){
         let windowScroll = document.body.scrollTop || document.documentElement.scrollTop;
         let articles = document.querySelectorAll('.article');
         if(windowScroll > docViewTop && windowScroll < docViewBottom){
-            console.log(articles.length);
             for (let i = 0; i < articles.length; i++) {
                 if(i % 2 !== 0){
                     articles[i].classList.add('animRight');
@@ -86,23 +85,5 @@ export default (function scriptFile(){
         sectionWorkorkingAdd();
     }
     
-    // hamburger.addEventListener('click',() =>{
-    //     let navi = query('#navi');
-    //     let site = query('#site');
-    //     let foter = query('#foter');
-    //     navi.classList.add('nav__add');
-    //     site.classList.add('remove');
-    //     foter.classList.add('remove');
-    // })
-    // closeIt.addEventListener('click',() =>{
-    //     navi.classList.remove('nav__add');
-    //     site.classList.remove('remove');
-    //     foter.classList.remove('remove');
-    // })
-    // expand.addEventListener('click',() =>{
-    //     for (let i = 0; i <expand.length; i++) {
-    //     less[i].classList.remove('less');
-    //     less[i].classList.add('more');
-    //     }
-    // });
+    
 })();

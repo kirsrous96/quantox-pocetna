@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-function Header() {
+function Header({display,setDisplay}) {
     return (
-        <header>
+        <header className={display ? '': 'remove'}>
         <div className="header">
             <div className="logo">
                 <img src="https://quantox.com/assets/img/logo.png" alt="Logo" />
@@ -18,7 +18,7 @@ function Header() {
                     <a href="#">хеб</a>
                 </div>
                 <div id="hamburger" className="ham_menu">
-                    <i className="fas fa-bars fa-3x"></i>
+                    <i onClick={e => setDisplay()} className="fas fa-bars fa-3x"></i>
                 </div>
             </div>
         </div>

@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Footer() {
+function Footer({display}) {
+    const [email,setEmail] = useState('');
+    
+    const subscribeTo = (e) =>{
+        e.preventDefault();
+        console.log(email);
+        if(email !== ''){
+            setEmail('Hvala vam!');
+        }
+    }
+
+    const newInput = (e) =>{
+        if(email !== ''){
+            setEmail('');
+        } 
+    }
+
     return (
-        <footer id="foter">
+        <footer id="foter" className={display ? '': 'remove'}>
         <div className="form__container">
         <h1><span className="overline att">ПРИ</span>ЈАВИТЕ СЕ НА НАШУ Е-МАИЛ ЛИСТУ</h1>       
         <div className="form">
         <form >
-            <input type="email" name="email" id="email" placeholder="Ваш Е-маил" />
-            <button>ПРИЈАВИ СЕ</button>
+            <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} name="email" id="email" placeholder="Ваш Е-маил" onClick={newInput}  />
+            <button onClick={subscribeTo}>ПРИЈАВИ СЕ</button>
         </form>
         </div>
         </div>

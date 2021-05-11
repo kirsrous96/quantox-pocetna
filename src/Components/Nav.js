@@ -1,10 +1,11 @@
 import React from 'react';
 
 
-function Nav() {
+function Nav({display, setDisplay}) {
+
     return (
-        <nav id="navi">
-        <i id="close" className="nav__close fas fa-times fa-3x"></i>    
+        <nav className={display ? 'remove': ''} id="navi">
+        <i id="close" onClick={e => setDisplay()} className="nav__close fas fa-times fa-3x"></i>    
         <div className="navigation">
             <div className="nav__logo">
                 <img src="https://quantox.com/assets/img/logo-menu.png" alt="logo" />
